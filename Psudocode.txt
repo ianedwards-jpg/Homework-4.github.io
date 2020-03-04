@@ -1,0 +1,21 @@
+Psudocode
+
+Running Question Array 
+    1. What does HTML stand for? 
+        a. 
+        b.
+        c.
+        d.
+    2. What are the 3 building blocks of the web?
+        a.
+        b.
+        c
+        d. 
+    3. What building block is responsible for a webpage's appearance?
+        a.
+        b.
+        c.
+
+Timer Function ()
+    Put the timer in the footer or at a bottom row 
+    
