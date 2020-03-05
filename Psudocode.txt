@@ -15,7 +15,7 @@ Running Question Array
         a.
         b.
         c.
-
+Use javascript to create button for each array variable 
 Timer Function ()
     Put the timer in the footer or at a bottom row 
     
