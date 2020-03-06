@@ -3,11 +3,22 @@ var questDisplay = document.querySelector("question") //Assigns question variabl
 var mainEl = document.getElementById("main");
 
 
-var questArray = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's appearance?"]
+//var questArray = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's appearance?]
+
+//Start Div Variables 
 var startScreen = document.getElementById("startDiv")
 
+//Question and Button variables 
+var question = document.getElementById("#question")
+var choiceA = document.getElementById("#choiceA")
+var choiceB = document.getElementById("#choiceB")
+var choiceC = document.getElementById("#choiceC")
+var choiceD = document.getElementById("#choiceD")
 
-funciton displayQuestion(); {
+//Score Variables 
+var score = 0 
+
+function displayQuestion(); {
   let questions = [
     {
     question: "What does HTML stand for?",
