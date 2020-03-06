@@ -9,11 +9,12 @@ var mainEl = document.getElementById("main");
 var startScreen = document.getElementById("startDiv")
 
 //Question and Button variables + Added event listeners
-var question = document.getElementById("#question").addEventListener("click", displayDate);
-var choiceA = document.getElementById("#choiceA").addEventListener("click", displayDate);
-var choiceB = document.getElementById("#choiceB").addEventListener("click", displayDate);
-var choiceC = document.getElementById("#choiceC").addEventListener("click", displayDate);
-var choiceD = document.getElementById("#choiceD").addEventListener("click", displayDate);
+const quiz = document.getElementById("#quiz") // Question Container 
+const question = document.getElementById("#question") // Question Container 
+const choiceA = document.getElementById("#choiceA").addEventListener("click", displayQuestion);
+const choiceB = document.getElementById("#choiceB").addEventListener("click", displayQuestion);
+const choiceC = document.getElementById("#choiceC").addEventListener("click", displayQuestion);
+const choiceD = document.getElementById("#choiceD").addEventListener("click", displayQuestion);
 
 
 //Score Variables 
@@ -21,10 +22,11 @@ var score = 0
 
 function displayQuestion(); {
   //Function Variables 
- var choiceA = document.getElementById("#choiceA").innerHTML
- var choiceB = document.getElementById("#choiceB").innerHTML
- var choiceC = document.getElementById("#choiceC").innerHTML
- var choiceD =document.getElementById("#choiceA").innerHTML
+ document.getElementById("#question").innerHTML = question
+ document.getElementById("#choiceA").innerHTML = choiceA
+ document.getElementById("#choiceB").innerHTML = choiceB
+ document.getElementById("#choiceC").innerHTML = choiceC
+ document.getElementById("#choiceA").innerHTML = choiceD
 
 
    let questions = [
@@ -54,7 +56,11 @@ function displayQuestion(); {
     },//End Question 3
   ]; 
 
-  if choiceA 
+  for (i = 0; i < questions.length; i++) {
+
+
+  }
+  
 
 
 }
