@@ -8,18 +8,26 @@ var mainEl = document.getElementById("main");
 //Start Div Variables 
 var startScreen = document.getElementById("startDiv")
 
-//Question and Button variables 
-var question = document.getElementById("#question")
-var choiceA = document.getElementById("#choiceA")
-var choiceB = document.getElementById("#choiceB")
-var choiceC = document.getElementById("#choiceC")
-var choiceD = document.getElementById("#choiceD")
+//Question and Button variables + Added event listeners
+var question = document.getElementById("#question").addEventListener("click", displayDate);
+var choiceA = document.getElementById("#choiceA").addEventListener("click", displayDate);
+var choiceB = document.getElementById("#choiceB").addEventListener("click", displayDate);
+var choiceC = document.getElementById("#choiceC").addEventListener("click", displayDate);
+var choiceD = document.getElementById("#choiceD").addEventListener("click", displayDate);
+
 
 //Score Variables 
 var score = 0 
 
 function displayQuestion(); {
-  let questions = [
+  //Function Variables 
+ var choiceA = document.getElementById("#choiceA").innerHTML
+ var choiceB = document.getElementById("#choiceB").innerHTML
+ var choiceC = document.getElementById("#choiceC").innerHTML
+ var choiceD =document.getElementById("#choiceA").innerHTML
+
+
+   let questions = [
     {
     question: "What does HTML stand for?",
     choiceA: "Hypotext Marking Language",
@@ -45,6 +53,8 @@ function displayQuestion(); {
     correct: "D"
     },//End Question 3
   ]; 
+
+  if choiceA 
 
 
 }
