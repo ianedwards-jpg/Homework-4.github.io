@@ -52,20 +52,29 @@ var score = 0
 
 //Timer Variables 
 const secondsLeft = 20;     //Quiz time 
-
+let questionCycle = 0 
 
 function displayQuestion(); {
 //Function Variables 
-let q = 
- document.getElementById("#question").innerHTML = question
- document.getElementById("#choiceA").innerHTML = choiceA
- document.getElementById("#choiceB").innerHTML = choiceB
- document.getElementById("#choiceC").innerHTML = choiceC
- document.getElementById("#choiceA").innerHTML = choiceD
-
+let q = questions[questionCycle]
+ question.innerHTML = "<p>" + q.question +"</p>";
+ choiceA.innerHTML = q.choiceA;
+ choiceB.innerHTML = q.choiceB;
+ choiceC.innerHTML = q.choiceC;
+ choiceD.innerHTML = q.choiceD;
 }
 
-function 
+function checkAnswer (answer){
+  if(answer == question[questionCycle].correct)
+  //Increment score by 1 
+    score++
+  //
+  else{
+    
+  }
+
+
+}
 
 function answerIsCorrect()
 
