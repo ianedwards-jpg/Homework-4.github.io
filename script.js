@@ -70,7 +70,8 @@ function checkAnswer (answer){
     score++
   //
   else{
-    
+    secondsLeft = (secondsLeft - 5)
+
   }
 
 
