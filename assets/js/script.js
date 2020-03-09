@@ -57,11 +57,11 @@ let questionCycle = 0
 function displayQuestion(); {
 //Function Variables 
 let q = questions[questionCycle]
- question.innerHTML = "<p>" + q.question +"</p>";
- choiceA.innerHTML = q.choiceA;
- choiceB.innerHTML = q.choiceB;
- choiceC.innerHTML = q.choiceC;
- choiceD.innerHTML = q.choiceD;
+ q.question = question.innerHTML;
+ q.choiceA = choiceA.innerHTML;
+ q.choiceB = choiceB.innerHTML;
+ q.choiceC = choiceC.innerHTML;
+ q.choiceD = choiceD.innerHTM;
 }
 
 function checkAnswer (answer){
@@ -74,10 +74,15 @@ function checkAnswer (answer){
 
   }
 
-
 }
 
-function answerIsCorrect()
+function questionCycle(); {
+for (i = 0; i < questions.length; i++);
+console.log(list[i]) 
+displayQuestion();
+
+
+}
 
 
 function answerIsWrong()
