@@ -6,19 +6,25 @@ var mainEl = document.getElementById("main");
 //var questArray = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's appearance?]
 
 //Start Div Variables 
-const startQuiz = document.getElementById("startQuiz")
+var startScreen = document.getElementById("startDiv")
 
 //Question and Button variables + Added event listeners
-const quiz = document.getElementById("#quiz") // Question Container 
-const question = document.getElementById("#question") // Question Container 
-const choiceA = document.createElement("button").addEventListener("click", displayQuestion);
-const choiceB = document.createElement("#button").addEventListener("click", displayQuestion);
-const choiceC = document.createElement("#button").addEventListener("click", displayQuestion);
-const choiceD = document.createElement("#button" ).addEventListener("click", displayQuestion);
+var question = document.getElementById("question")
+var choiceA = document.getElementById("choiceA").addEventListener("click", displayQuestion);
+var choiceB = document.getElementById("choiceB").addEventListener("click", displayQuestion);
+var choiceC = document.getElementById("choiceC").addEventListener("click", displayQuestion);
+var choiceD = document.getElementById("choiceD").addEventListener("click", displayQuestion);
 
-const totalQuestions = questions.length - 1; //Reduces Questions array value from 7 to 6 
+var secondsLeft = 20;     //Quiz time 
 
-//Questions Array 
+var timeLeft = document.getElementById("")
+
+
+
+//Score Variables 
+var score = 0; 
+
+//Question Array 
 let questions = [
   {
   question: "What does HTML stand for?",
@@ -47,49 +53,26 @@ let questions = [
 ]; 
 
 
-//Score Variables
-var score = 0 
-
-//Timer Variables 
-const secondsLeft = 20;     //Quiz time 
-let questionCycle = 0 
-
-function displayQuestion(); {
-//Function Variables 
-let q = questions[questionCycle]
- question.innerHTML = "<p>" + q.question +"</p>";
- choiceA.innerHTML = q.choiceA;
- choiceB.innerHTML = q.choiceB;
- choiceC.innerHTML = q.choiceC;
- choiceD.innerHTML = q.choiceD;
-}
-
-function checkAnswer (answer){
-  if(answer == question[questionCycle].correct)
-  //Increment score by 1 
-    score++
-  //
-  else{
-    secondsLeft = (secondsLeft - 5)
-
-  }
-
+function displayQuestion() {
+  //Function Variables 
+ var choiceA = document.getElementById("choiceA").innerHTML;
+ var choiceB = document.getElementById("choiceB").innerHTML;
+ var choiceC = document.getElementById("choiceC").innerHTML;
+ var choiceD =document.getElementById("choiceD").innerHTML;
 
 }
 
-function answerIsCorrect()
+//function answerIsCorrect()
 
 
-function answerIsWrong()
-
-
+//function answerIsWrong()
 
 
 
 
 
 
-var startButton = document.querySelector("#start");   //Start Button Connect to HTML
+//var startButton = document.querySelector("#start");   //Start Button Connect to HTML
 
 
 
@@ -103,30 +86,30 @@ var startButton = document.querySelector("#start");   //Start Button Connect to 
 
 
 
-//Timer Function and Variables 
-var timeEl = document.querySelector(".time");
-var mainEl = document.getElementById("main");
-function setTime() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeLeft.textContent = secondsLeft + " seconds left";
+// Timer Function and Variables 
+// var timeEl = document.querySelector(".time");
+// var mainEl = document.getElementById("main");
+// function setTime() {
+//   var timerInterval = setInterval(function() {
+//     secondsLeft--;
+//     timeLeft.textContent = secondsLeft + " seconds left";
 
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-    }
+//     if(secondsLeft === 0) {
+//       clearInterval(timerInterval);
+//       sendMessage();
+//     }
 
-  }, 1000);
-}
+//   }, 1000);
+// }
 
-function sendMessage() {
-  timeEl.textContent = " ";
+// function sendMessage() {
+//   timeEl.textContent = " ";
 
-  var imgEl = document.createElement("img");
+//   var imgEl = document.createElement("img");
 
-  imgEl.setAttribute("src", "images/image_1.jpg");
-  mainEl.appendChild(imgEl);
+//   imgEl.setAttribute("src", "images/image_1.jpg");
+//   mainEl.appendChild(imgEl);
 
-}
+// }
 
-setTime();
+// setTime();
