@@ -1,10 +1,8 @@
+//Global Variables
 var timeLeft = document.querySelector("time-left");
 var questDisplay = document.querySelector("question") //Assigns question variable to question div on webpage
 var startButton = document.querySelector("startQuiz");   //Start Button Connect to HTML
 var displayScore = document.getElementById("score")
-
-
-
 
 //Start Div Variables 
 const startQuiz = document.getElementById("startQuiz").addEventListener("click", startQuiz);
@@ -17,11 +15,6 @@ const choiceB = document.getElementById("choiceB").addEventListener("click", che
 const choiceC = document.getElementById("choiceC").addEventListener("click", checkAnswer);
 const choiceD = document.getElementById("choiceD" ).addEventListener("click", checkAnswer);
 
-const totalQuestions = questions.length - 1; //Reduces Questions array value from 7 to 6 
-
-// 
-
-
 //Other Question Array
 var questions = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's styling?"]
 var choicesA = ["Hypotext Marking Language", "HTML, CSS, JavaScript", "HTML"]
@@ -33,15 +26,12 @@ var choicesD = ["Hypotext Makeup Language", "Cobol, CSS, JavaScript", "CSS"]
 var score = 0; displayScore = score; 
 
 //Timer Variables 
-const secondsLeft = 20;     //Quiz time 
-let questionCycle = 0 
-
+const secondsLeft = 20;     //Quiz time
 
 //Main Function - StartQuiz
-
 function startQuiz (); {
 
-
+//Timer Function
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
@@ -55,8 +45,7 @@ function setTime() {
     }, 1000);
   }
  
-
-//Function Variables 
+//Question Cycle Function 
 function questionCycle(); {
   for (i = 0; i < questions.length; i++); {
   console.log(list[i]) 
