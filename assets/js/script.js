@@ -1,11 +1,13 @@
 var timeLeft = document.querySelector("time-left");
 var questDisplay = document.querySelector("question") //Assigns question variable to question div on webpage
 var startButton = document.querySelector("startQuiz");   //Start Button Connect to HTML
+var displayScore = document.getElementById("score")
+
 
 
 
 //Start Div Variables 
-const startQuiz = document.getElementById("startQuiz")
+const startQuiz = document.getElementById("startQuiz").addEventListener("click", startQuiz);
 
 //Question and Button variables + Added event listeners
 const quiz = document.getElementById("#quiz") // Question Container 
@@ -28,43 +30,48 @@ var choicesC = ["Python", "HTML, Python, JavaScript", "HTML, Python, JavaScript"
 var choicesD = ["Hypotext Makeup Language", "Cobol, CSS, JavaScript", "CSS"]
 
 //Score Variables
-var score = 0 
+var score = 0; displayScore = score; 
 
 //Timer Variables 
 const secondsLeft = 20;     //Quiz time 
 let questionCycle = 0 
 
-function displayQuestion(); {
-//Function Variables 
-let q = questions[questionCycle]
-document.querySelector("question").innertext =  q.questions[i];
-document.querySelector("choiceA").innerText = q.choicesA[i];
-document.querySelector("choiceB").innerText = q.choicesB[i];
-document.querySelector("choiceC").innerText = q.choicesC[i];
-document.querySelector("choiceD").innerText = q.choicesD[i];
+
+//Main Function - StartQuiz
+
+function startQuiz (); {
 
 //Function Variables 
 function questionCycle(); {
-  for (i = 0; i < questions.length; i++);
+  for (i = 0; i < questions.length; i++); {
   console.log(list[i]) 
   displayQuestion();
-  
-  
+  checkAnswer();
+
+  function displayQuestion(); {
+    //Function Variables 
+    let q = questions[questionCycle.result]
+    document.querySelector("question").innertext =  q.questions[i];
+    document.querySelector("choiceA").innerText = q.choicesA[i];
+    document.querySelector("choiceB").innerText = q.choicesB[i];
+    document.querySelector("choiceC").innerText = q.choicesC[i];
+    document.querySelector("choiceD").innerText = q.choicesD[i];
+        }
+
+  function checkAnswer (){
+    if(answer == question[questionCycle].correct)
+    //Increment score by 1 
+      score++
+    //
+    else{
+      secondsLeft = (secondsLeft - 5)
+        }
+      }
+    }
   }
-}
 //Check Answer
-function checkAnswer (answer){
-  if(answer == question[questionCycle].correct)
-  //Increment score by 1 
-    score++
-  //
-  else{
-    secondsLeft = (secondsLeft - 5)
-
-  }
 
 }
-
 
 //var mainEl = document.getElementById("main");
 //var questArray = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's appearance?]
@@ -134,7 +141,7 @@ function checkAnswer (answer){
 
 
 //Timer Function and Variables 
-var timerEl = document.querySelector("timer");
+//var timerEl = document.querySelector("timer");
  //var mainEl = document.getElementById("main");
  function setTime() {
    var timerInterval = setInterval(function() {
@@ -157,6 +164,6 @@ var timerEl = document.querySelector("timer");
 //    imgEl.setAttribute("src", "images/image_1.jpg");
    //mainEl.appendChild(imgEl);
 
- }
+ //}
 
  setTime();
