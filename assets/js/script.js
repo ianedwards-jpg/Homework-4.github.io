@@ -41,6 +41,21 @@ let questionCycle = 0
 
 function startQuiz (); {
 
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeLeft.textContent = secondsLeft + " seconds left";
+ 
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        //sendMessage();
+      }
+ 
+    }, 1000);
+  }
+ 
+
 //Function Variables 
 function questionCycle(); {
   for (i = 0; i < questions.length; i++); {
@@ -70,7 +85,7 @@ function questionCycle(); {
     }
   }
 //Check Answer
-
+setTime();
 }
 
 //var mainEl = document.getElementById("main");
@@ -143,19 +158,7 @@ function questionCycle(); {
 //Timer Function and Variables 
 //var timerEl = document.querySelector("timer");
  //var mainEl = document.getElementById("main");
- function setTime() {
-   var timerInterval = setInterval(function() {
-     secondsLeft--;
-     timeLeft.textContent = secondsLeft + " seconds left";
-
-     if(secondsLeft === 0) {
-       clearInterval(timerInterval);
-       //sendMessage();
-     }
-
-   }, 1000);
- }
-
+ 
 //  function sendMessage() {
 //    timerEl.textContent = " ";
 
@@ -166,4 +169,4 @@ function questionCycle(); {
 
  //}
 
- setTime();
+ 
