@@ -17,33 +17,7 @@ const choiceD = document.getElementById("choiceD" ).addEventListener("click", ch
 
 const totalQuestions = questions.length - 1; //Reduces Questions array value from 7 to 6 
 
-//Questions Array 
-let questions = [
-  {
-  question: "What does HTML stand for?",
-  choiceA: "Hypotext Marking Language",
-  choiceB: "Hypertext Marker Language", 
-  choiceC: "Python", 
-  choiceD: "Hypotext Makeup Language",  
-  correct: "C"
-  },//End Question 1 
-  {
-  question: "What are the 3 building blocks of the web?",
-  choiceA: "HTML, CSS, JavaScript",
-  choiceB: "Angular, HTML, JavaScript", 
-  choiceC: "HTML, Python, JavaScript", 
-  choiceD: "Cobol, CSS, JavaScript",  
-  correct: "A"
-  },//End Question 2
-  {
-  question: "What building block is responsible for a webpage's styling?",
-  choiceA: "HTML",
-  choiceB: "Python", 
-  choiceC: "HTML, Python, JavaScript", 
-  choiceD: "CSS",  
-  correct: "D"
-  },//End Question 3
-]; 
+// 
 
 
 //Other Question Array
@@ -63,13 +37,13 @@ let questionCycle = 0
 function displayQuestion(); {
 //Function Variables 
 let q = questions[questionCycle]
-document.querySelector("question").innertext =  q.question;
-document.querySelector("choiceA").innerText = q.choicesA;
-document.querySelector("choiceB").innerText = q.choicesB;
-document.querySelector("choiceC").innerText = q.choicesC;
-document.querySelector("choiceD").innerText = q.choicesD;
-}
+document.querySelector("question").innertext =  q.questions[i];
+document.querySelector("choiceA").innerText = q.choicesA[i];
+document.querySelector("choiceB").innerText = q.choicesB[i];
+document.querySelector("choiceC").innerText = q.choicesC[i];
+document.querySelector("choiceD").innerText = q.choicesD[i];
 
+//Function Variables 
 function questionCycle(); {
   for (i = 0; i < questions.length; i++);
   console.log(list[i]) 
@@ -77,7 +51,8 @@ function questionCycle(); {
   
   
   }
-
+}
+//Check Answer
 function checkAnswer (answer){
   if(answer == question[questionCycle].correct)
   //Increment score by 1 
@@ -94,10 +69,39 @@ function checkAnswer (answer){
 //var mainEl = document.getElementById("main");
 //var questArray = ["What does HTML stand for?", "What are the 3 building blocks of the web?", "What building block is responsible for a webpage's appearance?]
 
+//Questions Array 
+// let questions = [
+//   {
+//   question: "What does HTML stand for?",
+//   choiceA: "Hypotext Marking Language",
+//   choiceB: "Hypertext Marker Language", 
+//   choiceC: "Python", 
+//   choiceD: "Hypotext Makeup Language",  
+//   correct: "C"
+//   },//End Question 1 
+//   {
+//   question: "What are the 3 building blocks of the web?",
+//   choiceA: "HTML, CSS, JavaScript",
+//   choiceB: "Angular, HTML, JavaScript", 
+//   choiceC: "HTML, Python, JavaScript", 
+//   choiceD: "Cobol, CSS, JavaScript",  
+//   correct: "A"
+//   },//End Question 2
+//   {
+//   question: "What building block is responsible for a webpage's styling?",
+//   choiceA: "HTML",
+//   choiceB: "Python", 
+//   choiceC: "HTML, Python, JavaScript", 
+//   choiceD: "CSS",  
+//   correct: "D"
+//   },//End Question 3
+// ]; 
+
+
 //function answerIsWrong()
 
 // //Timer Function and Variables 
-// var timeEl = document.querySelector(".time");
+// var timerEl = document.querySelector("timer");
 // var mainEl = document.getElementById("main");
 // function setTime() {
 //   var timerInterval = setInterval(function() {
@@ -124,3 +128,35 @@ function checkAnswer (answer){
 
 // setTime();
 // End answerIsWrong
+
+
+
+
+
+//Timer Function and Variables 
+var timerEl = document.querySelector("timer");
+ //var mainEl = document.getElementById("main");
+ function setTime() {
+   var timerInterval = setInterval(function() {
+     secondsLeft--;
+     timeLeft.textContent = secondsLeft + " seconds left";
+
+     if(secondsLeft === 0) {
+       clearInterval(timerInterval);
+       //sendMessage();
+     }
+
+   }, 1000);
+ }
+
+//  function sendMessage() {
+//    timerEl.textContent = " ";
+
+//    var imgEl = document.createElement("img");
+
+//    imgEl.setAttribute("src", "images/image_1.jpg");
+   //mainEl.appendChild(imgEl);
+
+ }
+
+ setTime();
